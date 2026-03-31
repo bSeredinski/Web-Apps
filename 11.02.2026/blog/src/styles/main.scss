@@ -1,0 +1,146 @@
+﻿@use "variables";
+
+body {
+  margin: 0;
+  background: variables.$bg;
+  color: variables.$text;
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background: variables.$card;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: variables.$accent;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+
+    a {
+      color: variables.$text;
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover {
+        color: variables.$accent;
+      }
+    }
+  }
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 40px 0;
+}
+
+.post-card {
+  background: variables.$card;
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  h3 {
+    margin-top: 0;
+    text-transform: capitalize;
+    color: variables.$text;
+  }
+
+  p {
+    flex-grow: 1;
+    opacity: 0.8;
+  }
+
+  .read-more {
+    margin-top: 15px;
+    color: variables.$accent;
+    text-decoration: none;
+    font-weight: bold;
+    align-self: flex-start;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.post-detail {
+  max-width: 800px;
+  margin: 50px auto;
+
+  header {
+    margin-bottom: 30px;
+
+    h1 {
+      font-size: 2.5rem;
+      text-transform: capitalize;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      color: variables.$accent;
+      font-size: 0.9rem;
+    }
+  }
+
+  .content {
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+  }
+}
+
+.comments-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .comment {
+    background: variables.$card;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+
+    span {
+      display: block;
+      color: variables.$accent;
+      font-size: 0.8rem;
+      margin-bottom: 5px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  opacity: 0.5;
+  font-size: 0.8rem;
+}
